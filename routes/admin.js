@@ -7,15 +7,15 @@ const Joi = require('joi');
 require('dotenv').config();
 
 const schema = Joi.object({
-  primeiro_nome: Joi.string().min(3).max(30).required(),
-  usuario: Joi.string().email().required(),
+  primeiro_nome: Joi.string().min(3).max(30),
+  usuario: Joi.string().required(),
   senha: Joi.string().min(5).required()
 });
 
 const schemaatualizar = Joi.object({
   primeiro_nome: Joi.string().min(3).max(30),
-  usuario: Joi.string().email(),
-  senha: Joi.string().min(5)
+  usuario: Joi.string().required(),
+  senha: Joi.string().min(5).required()
 });
 
 function authenticateToken(req, res, next) {
