@@ -4,6 +4,14 @@ const jwt = require("jsonwebtoken");
 const Joi = require('joi');
 let segredo = process.env.JWT_SECRET;
 require('dotenv').config();
+const atualizaSchema = Joi.object({
+  primeiro_nome: Joi.string(),
+  usuario: Joi.string().required(),
+  senha: Joi.string().min(4).required(),
+
+});
+
+
 const {
   Sequelize,
   sequelize,
@@ -114,6 +122,10 @@ router.put(
   async function (req, res) {
     const nomeUsuario = req.params.nome_usuario;
     const novosDadosUsuario = req.body;
+    const { error } = atualizaSchema.validate(novosDadosUsuario);
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
 
     try {
       const usuarioExistente = await Cliente.findOne({
