@@ -12,8 +12,9 @@ exports.listarPedidos = async (req, res) => {
 };
 
 exports.criarPedido = async (req, res) => {
+  
   try {
-    const { clienteId, data, produtos } = req.body;
+    const { nome_cliente, data, produtos } = req.body;
 
   
     const produtosEncontrados = await Produto.findAll({ where: { id: produtos } });
@@ -28,7 +29,7 @@ exports.criarPedido = async (req, res) => {
     }
     total = total - (total * desconto);
 
-    const pedido = await Pedido.create({ clienteId, data, total });
+    const pedido = await Pedido.create({ nome_cliente, data, total, produtos });
     await pedido.setProdutos(produtos);
 
     res.status(201).json(pedido);
@@ -41,11 +42,11 @@ exports.criarPedido = async (req, res) => {
 exports.atualizarPedido = async (req, res) => {
   try {
     const { id } = req.params;
-    const {  data, status, total, produtos } = req.body;
+    const {  data, nome_cliente,  produtos } = req.body;
 
     const pedido = await Pedido.findByPk(id);
     if (pedido) {
-      await pedido.update({ data, status, total });
+      await pedido.update({ data, nome_cliente,produtos });
 
       if (produtos && produtos.length) {
         await pedido.setProdutos(produtos);
