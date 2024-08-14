@@ -57,14 +57,14 @@ app.get("/install", async function (req, res) {
         ]);
        
         const pedidos = await Pedido.bulkCreate([
-            { data: new Date(), status: "pedidofoifeito :D", total: 40, nome_cliente: clientes[1].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 40,  nome_cliente: clientes[2].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 36,  nome_cliente: clientes[3].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 54,  nome_cliente: clientes[4].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 32,  nome_cliente: clientes[5].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 32,  nome_cliente: clientes[6].usuario},
-            { data: new Date(), status: "pedidofoifeito :D", total: 80,  nome_cliente: clientes[7].usuario },
-            { data: new Date(), status: "pedidofoifeito :D", total: 96, nome_cliente: clientes[8].usuario}
+            { data: new Date(), status: "pedidofoifeito :D", total: 56, nome_cliente: clientes[1].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 56,  nome_cliente: clientes[2].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 45,  nome_cliente: clientes[3].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 63,  nome_cliente: clientes[4].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 56,  nome_cliente: clientes[5].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 48,  nome_cliente: clientes[6].usuario},
+            { data: new Date(), status: "pedidofoifeito :D", total: 96,  nome_cliente: clientes[7].usuario },
+            { data: new Date(), status: "pedidofoifeito :D", total: 112, nome_cliente: clientes[8].usuario}
           
         ]);
        

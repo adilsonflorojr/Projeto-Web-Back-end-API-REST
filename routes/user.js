@@ -111,7 +111,7 @@ router.get(
       const clientes = await Cliente.findAll();
       res.json(clientes);
     } catch (error) {
-      res.status(500).json({ error: "Erro ao listar produtos :/" });
+      res.status(500).json({ error: "Erro ao ver todos os usuarios :/" });
     }
   }
 );
@@ -156,7 +156,7 @@ router.put(
   }
 );
 router.delete(
-  "/delete/:nome_usuario",
+  "/:nome_usuario",
   authenticateToken,
   authorizeDelete,
   async function (req, res) {
