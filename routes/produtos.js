@@ -101,7 +101,7 @@ async function authorizeAdminGet(req, res, next) {
     }
   }
 
-router.get('/', authenticateToken, authorizeAdminGet, produtoController.listarProdutos);
+router.get('/', authenticateToken,  produtoController.listarProdutos);
 
 
 router.post('/', authenticateToken, produtoController.criarProduto);
