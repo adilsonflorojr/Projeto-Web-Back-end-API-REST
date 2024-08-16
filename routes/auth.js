@@ -62,6 +62,10 @@ router.post("/login", async function (req, res) {
     }
 
     if (senha === user.senha) {
+
+      user.contador += 1;
+      await user.save();
+
       token = jwt.sign( 
         {
           nome: usuario,
@@ -70,7 +74,8 @@ router.post("/login", async function (req, res) {
         { expiresIn: 6000000 }
       );
 
-      return res.status(200).json({ token: token }); 
+      
+      return res.status(200).json({ token: token, contador: user.contador });  
     } else {
      
       return res.status(401).json({ error: "Senha incorreta" });

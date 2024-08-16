@@ -33,15 +33,15 @@ app.get("/install", async function (req, res) {
   
         
         const clientes = await Cliente.bulkCreate([
-            { primeiro_nome: "Admin", usuario: "admin", senha: "admin", isAdmin: true },
-            { primeiro_nome: "Pessoaaaleatoria1", usuario: "aleatorio1", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria2", usuario: "aleatorio2", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria3", usuario: "aleatorio3", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria4", usuario: "aleatorio4", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria5", usuario: "aleatorio5", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria6", usuario: "aleatorio6", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria7", usuario: "aleatorio7", senha: "senha" },
-            { primeiro_nome: "Pessoaaaleatoria8", usuario: "aleatorio8", senha: "senha" }
+            { primeiro_nome: "Admin", usuario: "admin", senha: "admin", isAdmin: true , },
+            { primeiro_nome: "Pessoaaaleatoria1", usuario: "aleatorio1", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria2", usuario: "aleatorio2", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria3", usuario: "aleatorio3", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria4", usuario: "aleatorio4", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria5", usuario: "aleatorio5", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria6", usuario: "aleatorio6", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria7", usuario: "aleatorio7", senha: "senha", },
+            { primeiro_nome: "Pessoaaaleatoria8", usuario: "aleatorio8", senha: "senha", }
         ]);
        
        

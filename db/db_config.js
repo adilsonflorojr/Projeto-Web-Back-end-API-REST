@@ -30,6 +30,10 @@ const sequelize = new Sequelize(process.env.DB_NADA, process.env.DB_USER,process
         type: DataTypes.BOOLEAN,
         defaultValue: false 
     },
+    contador: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    }
 });
 
 const Pedido = sequelize.define('Pedido', {
